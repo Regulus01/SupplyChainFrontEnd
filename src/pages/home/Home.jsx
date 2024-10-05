@@ -23,7 +23,7 @@ const Home = () => {
           <NavLink to="Cadastro/Estoque">
             <Button className={styles.button} label="Estoque"></Button>
           </NavLink>
-          <NavLink to="Cadastro/Mercadoria">
+          <NavLink to="Cadastro/Entrada">
             <Button className={styles.button} label="Entrada"></Button>
           </NavLink>
           <NavLink to="Cadastro/Mercadoria">

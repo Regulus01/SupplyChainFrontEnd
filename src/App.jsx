@@ -9,6 +9,7 @@ import './App.css'
 import CadastroTipoDeMercadoria from './pages/cadastroTipoDeMercadoria/CadastroTipoDeMercadoria'
 import CadastroMercadoria from './pages/cadastroMercadoria/CadastroMercadoria'
 import CadastroEstoque from './pages/cadastroEstoque/cadastroEstoque'
+import CadastroEntrada from './pages/cadastroEntrada/CadastroEntrada'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
               <Route path="Cadastro/TipoDeMercadoria" element={<CadastroTipoDeMercadoria />} />
               <Route path="Cadastro/Mercadoria" element={<CadastroMercadoria />} />
               <Route path="Cadastro/Estoque" element={<CadastroEstoque />} />
+              <Route path="Cadastro/Entrada" element={<CadastroEntrada />} />
             </Routes>
         </BrowserRouter>
     </div>
