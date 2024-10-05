@@ -8,6 +8,7 @@ import Home from './pages/home/Home'
 import './App.css'
 import CadastroTipoDeMercadoria from './pages/cadastroTipoDeMercadoria/CadastroTipoDeMercadoria'
 import CadastroMercadoria from './pages/cadastroMercadoria/CadastroMercadoria'
+import CadastroEstoque from './pages/cadastroEstoque/cadastroEstoque'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="Cadastro/TipoDeMercadoria" element={<CadastroTipoDeMercadoria />} />
               <Route path="Cadastro/Mercadoria" element={<CadastroMercadoria />} />
+              <Route path="Cadastro/Estoque" element={<CadastroEstoque />} />
             </Routes>
         </BrowserRouter>
     </div>
