@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Card className={styles.content}>
-        <h1> Cadastro </h1>
+        <h1 className="titulo"> Cadastro </h1>
         <div className={styles.buttonDiv}>
           <NavLink to="/Mercadoria/Cadastro">
             <Button className={styles.button} label="Mercadoria"></Button>

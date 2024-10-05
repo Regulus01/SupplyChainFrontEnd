@@ -1,58 +1,59 @@
 import { useState } from "react";
-import { Toast } from 'primereact/toast';
-import { useRef } from 'react';
+import useToast from "./useToast";
 
+export const useFetch = (toast) => {
+  const urlBase = import.meta.env.VITE_APP_DEV_API_BASE_URL;
 
-export const useFetch = () => {
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const toast = useRef(null);
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState(null);
+  const { showError, showSuccess } = useToast();
 
-    const urlBase =  import.meta.env.VITE_APP_DEV_API_BASE_URL
+  const GetRequest = async (url) => {
+    try {
+      const response = await fetch(urlBase + url);
+      const json = await response.json();
+      setLoading(false);
 
-    const GetRequest = async (url) => {
-        try {
-            const response = await fetch(urlBase + url)
-            const json = await response.json();
-            setLoading(false)
-
-            return json;
-
-        } catch (error) {
-            <Toast ref={toast} severity="danger"/>
-            console.log(error)
-            setError("Erro ao carregar os dados!")
-            setLoading(false)
-        }
-    };
-
-    const PostRequest = async (data, url) => {
-        try {
-            setError(null)
-        
-            const response = await fetch(urlBase + url, {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                }
-            })
-    
-            var json = await response.json();
-       
-            if(json.success){
-               return json;
-            }
-
-            if (json.error.code === "BadRequest") {
-                setError(json.error.message[0].value)
-            }
-            
-        } catch (error) {
-            setError("Erro ao carregar os dados!")
-            setLoading(false)
-        }
+      return json;
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
     }
+  };
 
-    return { error, loading, GetRequest, PostRequest, };
-}
+  const PostRequest = (data, url) => {
+    setLoading(true);
+
+    fetch(urlBase + url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((r) => r.json())
+      .then(
+        (result) => {
+          if (result.success) {
+            showSuccess(toast);
+            setResponse(result);
+          }
+
+          if (result.success === false) {
+            showError(result.error, toast);
+            setResponse(result);
+          }
+        },
+
+        (error) => {
+          showError([], toast);
+          console.log(error);
+        }
+      )
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  return { toast, loading, response, GetRequest, PostRequest };
+};

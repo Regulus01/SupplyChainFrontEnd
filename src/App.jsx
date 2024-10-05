@@ -10,9 +10,8 @@ import './App.css'
 
 
 function App() {
-
   return (
-    <div className='main'>
+    <div className="flex flex-column align-items-center gap-3">
         <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
