@@ -15,7 +15,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { Toast } from "primereact/toast";
 import { ProgressSpinner } from "primereact/progressspinner";
 
-const Cadastro = () => {
+const CadastroMercadoria = () => {
   const [numeroDeRegistro, setNumeroDeRegistro] = useState("");
   const [nome, setNome] = useState("");
   const [fabricante, setFabricante] = useState("");
@@ -60,7 +60,7 @@ const Cadastro = () => {
       <div className={styles.content}>
         <form onSubmit={handleSubmit}>
           <label className={styles.label} htmlFor="">
-            <h3>Numero de registro</h3>
+            <h3>Número de registro</h3>
             <InputText
               disabled={loading}
               placeholder="Digite o número de registro"
@@ -131,4 +131,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default CadastroMercadoria;

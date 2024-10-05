@@ -2,11 +2,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //pages
-import Cadastro from './pages/cadastroMercadoria/Cadastro'
 import Home from './pages/home/Home'
 
 //Css
 import './App.css'
+import CadastroTipoDeMercadoria from './pages/cadastroTipoDeMercadoria/CadastroTipoDeMercadoria'
+import CadastroMercadoria from './pages/cadastroMercadoria/CadastroMercadoria'
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="Cadastro/Mercadoria" element={<Cadastro />} />
+              <Route path="Cadastro/TipoDeMercadoria" element={<CadastroTipoDeMercadoria />} />
+              <Route path="Cadastro/Mercadoria" element={<CadastroMercadoria />} />
             </Routes>
         </BrowserRouter>
     </div>

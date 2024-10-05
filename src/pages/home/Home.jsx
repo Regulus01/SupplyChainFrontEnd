@@ -14,6 +14,9 @@ const Home = () => {
       <Card className={styles.content}>
         <h1 className="titulo"> Cadastro </h1>
         <div className={styles.buttonDiv}>
+          <NavLink to="Cadastro/TipoDeMercadoria">
+            <Button className={styles.button} label="Tipo de Mercadoria"></Button>
+          </NavLink>
           <NavLink to="Cadastro/Mercadoria">
             <Button className={styles.button} label="Mercadoria"></Button>
           </NavLink>
