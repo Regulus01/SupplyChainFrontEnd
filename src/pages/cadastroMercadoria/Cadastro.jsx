@@ -16,16 +16,26 @@ import { Toast } from "primereact/toast";
 import { ProgressSpinner } from "primereact/progressspinner";
 
 const Cadastro = () => {
-  const [numeroDeRegistro, setNumeroDeRegistro] = useState("f");
-  const [nome, setNome] = useState("f");
-  const [fabricante, setFabricante] = useState("f");
-  const [descricao, setDescricao] = useState("f");
-  const [tipoMercadoriaId, setTipoMercadoriaId] = useState("");
+  const [numeroDeRegistro, setNumeroDeRegistro] = useState("");
+  const [nome, setNome] = useState("");
+  const [fabricante, setFabricante] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [selectedTiposDeMercadoria, setSelectedTiposDeMercadoria] =
+    useState(null);
+  const [tiposDeMercadoria, setTiposDeMercadoria] = useState([]);
 
   const toast = useRef(null);
 
   //hooks
-  const { PostRequest, response, loading } = useFetch(toast);
+  const { PostRequest, GetRequest, response, loading } = useFetch(toast);
+
+  useEffect(() => {
+    const Get = async () => {
+      var response = await GetRequest("TipoDeMercadoria");
+      setTiposDeMercadoria(response.data);
+    };
+    Get();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +45,7 @@ const Cadastro = () => {
       nome: nome,
       fabricante: fabricante,
       descricao: descricao,
-      tipoMercadoriaId: "32f548f7-593f-43c4-bd07-778596ca619d",
+      tipoMercadoriaId: selectedTiposDeMercadoria.id,
     };
 
     PostRequest(body, "Mercadoria");
@@ -53,6 +63,7 @@ const Cadastro = () => {
             <h3>Numero de registro</h3>
             <InputText
               disabled={loading}
+              placeholder="Digite o número de registro"
               required
               className="p-inputtext"
               value={numeroDeRegistro}
@@ -62,6 +73,7 @@ const Cadastro = () => {
             <h3>Nome</h3>
             <InputText
               disabled={loading}
+              placeholder="Digite o nome da mercadoria"
               required
               value={nome}
               onChange={(e) => setNome(e.target.value)}
@@ -76,6 +88,7 @@ const Cadastro = () => {
             <h3>Fabricante</h3>
             <InputText
               disabled={loading}
+              placeholder="Digite o nome do fabricante"
               required
               value={fabricante}
               onChange={(e) => setFabricante(e.target.value)}
@@ -83,6 +96,7 @@ const Cadastro = () => {
 
             <h3>Descrição</h3>
             <InputText
+              placeholder="Digite uma descrição"
               required
               disabled={loading}
               value={descricao}
@@ -90,7 +104,15 @@ const Cadastro = () => {
             />
 
             <h3>Tipo de mercadoria</h3>
-            <Dropdown optionLabel="name" placeholder="Tipo de mercadoria" />
+            <Dropdown
+              className="w-full md:w-12rem"
+              optionLabel="nome"
+              value={selectedTiposDeMercadoria}
+              onChange={(e) => setSelectedTiposDeMercadoria(e.value)}
+              options={tiposDeMercadoria}
+              placeholder="Selecione o tipo de mercadoria"
+              loading={loading}
+            />
           </label>
 
           <div className={styles.buttonActions}>

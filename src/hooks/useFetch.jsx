@@ -9,14 +9,17 @@ export const useFetch = (toast) => {
   const { showError, showSuccess } = useToast();
 
   const GetRequest = async (url) => {
+    setLoading(true);
+
     try {
       const response = await fetch(urlBase + url);
       const json = await response.json();
       setLoading(false);
-
       return json;
+
     } catch (error) {
-      console.log(error);
+      console.log(error)
+      showError([], toast);
       setLoading(false);
     }
   };
