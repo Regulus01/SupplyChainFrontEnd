@@ -41,11 +41,10 @@ const CadastroEntrada = () => {
     const Get = async () => {
       var url = "Estoque/" + selectedMercadoria.id + "/Locais";
       var response = await GetRequest(url);
-      setLocais(response.data)
+      setLocais(response.data);
     };
 
     if (selectedMercadoria != null) Get();
-    
   }, [selectedMercadoria]);
 
   const handleSubmit = (e) => {
@@ -58,7 +57,7 @@ const CadastroEntrada = () => {
       mercadoriaId: selectedMercadoria.id,
     };
 
-    console.log(body)
+    console.log(body);
     PostRequest(body, "Estoque/Entrada");
   };
 
@@ -123,7 +122,7 @@ const CadastroEntrada = () => {
             />
           </label>
           <div className={styles.buttonActions}>
-            <NavLink to="/">
+            <NavLink to="/Cadastro">
               <Button className={styles.button} label="Voltar"></Button>
             </NavLink>
             <Button

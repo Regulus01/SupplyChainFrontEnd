@@ -12,22 +12,13 @@ const Home = () => {
   return (
     <>
       <Card className={styles.content}>
-        <h1 className="titulo"> Cadastro </h1>
+        <h1 className="titulo"> Home </h1>
         <div className={styles.buttonDiv}>
-          <NavLink to="Cadastro/TipoDeMercadoria">
-            <Button className={styles.button} label="Tipo de Mercadoria"></Button>
-          </NavLink>
-          <NavLink to="Cadastro/Mercadoria">
+          <NavLink to="Cadastro">
             <Button className={styles.button} label="Mercadoria"></Button>
           </NavLink>
-          <NavLink to="Cadastro/Estoque">
-            <Button className={styles.button} label="Estoque"></Button>
-          </NavLink>
-          <NavLink to="Cadastro/Entrada">
-            <Button className={styles.button} label="Entrada"></Button>
-          </NavLink>
-          <NavLink to="Cadastro/Saida">
-            <Button className={styles.button} label="Saída"></Button>
+          <NavLink to="Cadastro">
+            <Button className={styles.button} label="Relatorios"></Button>
           </NavLink>
         </div>
       </Card>

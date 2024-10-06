@@ -11,6 +11,7 @@ import CadastroMercadoria from './pages/cadastroMercadoria/CadastroMercadoria'
 import CadastroEstoque from './pages/cadastroEstoque/cadastroEstoque'
 import CadastroEntrada from './pages/cadastroEntrada/CadastroEntrada'
 import CadastroSaida from './pages/cadastroSaida/CadastroSaida'
+import CadastrosHome from './pages/cadastrosHome/cadastrosHome'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="Cadastro" element={<CadastrosHome />} />
               <Route path="Cadastro/TipoDeMercadoria" element={<CadastroTipoDeMercadoria />} />
               <Route path="Cadastro/Mercadoria" element={<CadastroMercadoria />} />
               <Route path="Cadastro/Estoque" element={<CadastroEstoque />} />
