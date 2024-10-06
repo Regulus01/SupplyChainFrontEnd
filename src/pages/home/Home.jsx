@@ -26,12 +26,9 @@ const Home = () => {
           <NavLink to="Cadastro/Entrada">
             <Button className={styles.button} label="Entrada"></Button>
           </NavLink>
-          <NavLink to="Cadastro/Mercadoria">
+          <NavLink to="Cadastro/Saida">
             <Button className={styles.button} label="Saída"></Button>
           </NavLink>
-        </div>
-        <div>
-          <p>volte</p>
         </div>
       </Card>
     </>

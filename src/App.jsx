@@ -10,6 +10,7 @@ import CadastroTipoDeMercadoria from './pages/cadastroTipoDeMercadoria/CadastroT
 import CadastroMercadoria from './pages/cadastroMercadoria/CadastroMercadoria'
 import CadastroEstoque from './pages/cadastroEstoque/cadastroEstoque'
 import CadastroEntrada from './pages/cadastroEntrada/CadastroEntrada'
+import CadastroSaida from './pages/cadastroSaida/CadastroSaida'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path="Cadastro/Mercadoria" element={<CadastroMercadoria />} />
               <Route path="Cadastro/Estoque" element={<CadastroEstoque />} />
               <Route path="Cadastro/Entrada" element={<CadastroEntrada />} />
+              <Route path="Cadastro/Saida" element={<CadastroSaida />} />
             </Routes>
         </BrowserRouter>
     </div>
