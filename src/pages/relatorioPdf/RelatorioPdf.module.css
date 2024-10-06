@@ -1,0 +1,27 @@
+.content {
+    border: solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.local {
+    width: 200px;
+    border-right: solid;
+}
+
+.quantidade {
+    width: 200px;
+    border-right: solid;
+}
+
+.data {
+    width: 200px;
+    border-right: solid;
+}
+
+.mercadoria {
+    width: 200px;
+   
+}

@@ -12,7 +12,7 @@ import { Chart } from "primereact/chart";
 import { useEffect, useRef, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import useColumGraph from "../../hooks/useColumGraph";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const RelatorioAnual = () => {
   const toast = useRef(null);
@@ -97,11 +97,14 @@ const RelatorioAnual = () => {
             <Button label="Voltar"></Button>
           </NavLink>
 
-          <Button
-            color="green"
-            className={styles.button}
-            label="Gerar PDF"
-          ></Button>
+          <Link to={`GerarPdf/${selectedMercadoria?.id}`}>
+            <Button
+              disabled={selectedMercadoria == undefined}
+              color="green"
+              className={styles.button}
+              label="Gerar PDF"
+            ></Button>
+          </Link>
         </div>
       </div>
     </div>

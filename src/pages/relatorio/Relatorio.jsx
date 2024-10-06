@@ -17,9 +17,6 @@ const Relatorio = () => {
           <NavLink to="Anual">
             <Button className={styles.button} label="Anual"></Button>
           </NavLink>
-          <NavLink to="Anual">
-            <Button className={styles.button} label="Relatorios"></Button>
-          </NavLink>
 
           <NavLink to="/">
             <Button className={styles.button} label="Voltar"></Button>

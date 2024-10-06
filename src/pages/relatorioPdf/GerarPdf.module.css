@@ -1,0 +1,60 @@
+.main {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    width: 850px;
+    max-width: 850px;
+    height: 450px;
+    max-height: 450px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .opcoes {
+    height: 350px;
+    width: 796px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .label {
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 350px;
+  }
+  
+  .grafico {
+    height: 380px;
+    width: 796px;
+  }
+  
+  .botoes {
+    height: 70px;
+    width: 796px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .formButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .actionButtons {
+    width: 250px;
+    display: flex;
+    gap: 13%;
+  }
+  
