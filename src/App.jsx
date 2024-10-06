@@ -12,6 +12,8 @@ import CadastroEstoque from './pages/cadastroEstoque/cadastroEstoque'
 import CadastroEntrada from './pages/cadastroEntrada/CadastroEntrada'
 import CadastroSaida from './pages/cadastroSaida/CadastroSaida'
 import CadastrosHome from './pages/cadastrosHome/cadastrosHome'
+import RelatorioAnual from './pages/relatorioAnual/RelatorioAnual'
+import Relatorio from './pages/relatorio/relatorio'
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
               <Route path="Cadastro/Estoque" element={<CadastroEstoque />} />
               <Route path="Cadastro/Entrada" element={<CadastroEntrada />} />
               <Route path="Cadastro/Saida" element={<CadastroSaida />} />
+
+              <Route path="Relatorio" element={<Relatorio />} />
+              <Route path="Relatorio/Anual" element={<RelatorioAnual />} />
             </Routes>
         </BrowserRouter>
     </div>

@@ -48,7 +48,7 @@ const CadastroTipoDeMercadoria = () => {
             />
           </label>
           <div className={styles.buttonActions}>
-            <NavLink to="/">
+            <NavLink to="/Cadastro">
               <Button className={styles.button} label="Voltar"></Button>
             </NavLink>
             <Button

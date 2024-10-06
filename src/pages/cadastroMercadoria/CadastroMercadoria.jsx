@@ -27,7 +27,7 @@ const CadastroMercadoria = () => {
   const toast = useRef(null);
 
   //hooks
-  const { PostRequest, GetRequest, response, loading } = useFetch(toast);
+  const { PostRequest, GetRequest, loading } = useFetch(toast);
 
   useEffect(() => {
     const Get = async () => {
